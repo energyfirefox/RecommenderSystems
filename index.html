@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recommender Systems</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Recommender Systems">
+  <meta name="author" content="Anastasiia Kornilova">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="http://slidifylibraries.googlecode.com/git/inst/libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="http://slidifylibraries.googlecode.com/git/inst/libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="http://slidifylibraries.googlecode.com/git/inst/libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="http://slidifylibraries.googlecode.com/git/inst/libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="http://slidifylibraries.googlecode.com/git/inst/libraries/frameworks/io2012/js/slides" 
+    src="http://slidifylibraries.googlecode.com/git/inst/libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>Recommender Systems</h1>
+        <h2></h2>
+        <p>Anastasiia Kornilova<br/>Data scientist</p>
+      </hgroup>
+      <a href="https://github.com/energyfirefox/RecommenderSystems/zipball/gh-pages" class="example">
+        Download
+      </a>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Agenda</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>General overview</li>
+<li>Algorithms</li>
+<li>Evaluation</li>
+<li>Problems</li>
+<li>Existing tools</li>
+<li>Books and Online courses</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Main Features</h2>
+  </hgroup>
+  <article>
+    <ol>
+<li>Domain </li>
+<li>Purpose</li>
+<li>Recommendation Context </li>
+<li>Whose Opinions </li>
+<li>Personalization Level</li>
+<li>Privacy and Trustworthiness<br></li>
+<li>Interfaces</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Domains of recommendations</h2>
+  </hgroup>
+  <article>
+    <h1>Content to Commerce and Beyond</h1>
+
+<ul>
+<li>News, information, “text” </li>
+<li>Products, vendors, bundles </li>
+<li>Matchmaking (other people) </li>
+<li>Sequences (e.g., music playlists)</li>
+</ul>
+
+<h1>One particularly interesting property</h1>
+
+<ul>
+<li>New items (e.g., movies, books, …)<br></li>
+<li>Re-recommend old ones (e.g., groceries, music)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Purposes of Recommendation</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>The recommendations themselves (Sales, Information)</li>
+<li>Education of user/customer</li>
+<li>Build a community of users/customers around products or content</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Recommendation Context</h2>
+  </hgroup>
+  <article>
+    <h1>What is the User doing at the time of recommendation?</h1>
+
+<ul>
+<li>Shopping<br></li>
+<li>Listening to Music<br></li>
+<li>Hanging out with other people<br></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Whose Opinion?</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>“Experts”<br></li>
+<li>Ordinary “phoaks”<br></li>
+<li>People like you</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Personalization Level</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Generic / Non-Personalized: everyone receives same recommendations </li>
+<li>Demographic: matches a target group<br></li>
+<li>Ephemeral: matches current activity</li>
+<li>Persistent: matches long-term interests</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Privacy and Trustworthiness</h2>
+  </hgroup>
+  <article>
+    <h1>Who knows what about me?</h1>
+
+<ul>
+<li>Personal information revealed<br></li>
+<li>Identity<br></li>
+</ul>
+
+<h1>Is the recommendation honest?</h1>
+
+<ul>
+<li>Biases built-in by operator</li>
+<li>Vulnerability to external manipulation</li>
+<li>Transparency of “recommenders”</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Interfaces</h2>
+  </hgroup>
+  <article>
+    <h1>Types of Output</h1>
+
+<ul>
+<li>predictions (Estimates of how much you’ll like an item)</li>
+<li>recommnedations (Recommendations are suggestions for items you might like (or might fit what you’re doing)</li>
+<li>filtering </li>
+<li>Organic vs. explicit presentation (Agent/Discussion Interface)</li>
+</ul>
+
+<h1>Types of Input</h1>
+
+<ul>
+<li>explicit (Rating, Review, Vote, Like)</li>
+<li>implicit (Click, Purchase, Follow)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Recommendation Algorithms</h2>
+  </hgroup>
+  <article>
+    <h1>1. Non-Personalized Summary Statistics</h1>
+
+<h1>2. Content-Based Filtering</h1>
+
+<ul>
+<li>Information Filtering </li>
+<li>Knowledge-Based<br></li>
+</ul>
+
+<h1>3. Collaborative Filtering</h1>
+
+<ul>
+<li>User-user</li>
+<li>Item-item</li>
+<li>Dimensionality Reduction</li>
+</ul>
+
+<h1>4. Others</h1>
+
+<ul>
+<li>Critique / Interview Based Recommendations<br></li>
+<li>Hybrid Techniques</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Non-Personalized Summary Stats</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Best-seller </li>
+<li>Most popular</li>
+<li>Trending Hot</li>
+<li>Best-liked </li>
+<li>People who X also Y</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Content-Based Filtering</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>User Ratings x Item Attributes =&gt; Model</li>
+<li>Model applied to new items via attributes </li>
+<li>Alternative: knowledge-based (Item attributes form model of item space)</li>
+<li>Example: Personalized news feeds</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Content-Based Recommenders</h2>
+  </hgroup>
+  <article>
+    <h1>Key ideas:</h1>
+
+<ul>
+<li>Model items according to relevant attributes </li>
+<li>Model or reveal user preferences by attribute </li>
+</ul>
+
+<h1>Key concept: Keyword Vector</h1>
+
+<ul>
+<li><p>The universe of possible keywords defines a content space </p></li>
+<li><p>Each keyword is a dimension </p></li>
+<li><p>Each item has a position in that space; that position defines a vector </p></li>
+<li><p>Each user has a taste profile (or more than one) that is also a vector in that space - - The match between user preference and items is measured by how closely the two vectors align </p></li>
+<li><p>May want to limit/collapse keyword space (e.g., stem and stop) </p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Content-Based Recommenders. Tools</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Apache Lucene (Solr, PyLucene, Lucy, Lucene.Net)</li>
+<li>LensKit</li>
+<li>Machine Learning tools (Mahout, Python (with SciPi + NumPy), Matlab/Ocatve, R .. )</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Personalized Collaborative Filtering</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Use opinions of others to predict/recommend</li>
+<li>User model – set of ratings</li>
+<li>Item model – set of ratings</li>
+<li>Common core: sparse matrix of ratings </li>
+</ul>
+
+<h2>Collaborative Filtering Techniques</h2>
+
+<ul>
+<li>User-user (Select neighborhood of similar-taste people and use their opinion)</li>
+<li>Item-item (Pre-compute similarity among items via ratings)</li>
+<li>Dimensionality reduction (Compress and use a taste representation)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>User-User CF</h2>
+  </hgroup>
+  <article>
+    <h1>Selecting Neighborhoods</h1>
+
+<ul>
+<li>between 20 and 100 is often used</li>
+</ul>
+
+<h1>Scoring Items from Neighborhoods</h1>
+
+<ul>
+<li>average</li>
+<li>weighted average</li>
+<li>multiple linear regression</li>
+</ul>
+
+<h1>Normalizing Data</h1>
+
+<ul>
+<li>mean centering</li>
+<li>z-score</li>
+</ul>
+
+<h1>Computing Similarities</h1>
+
+<ul>
+<li>Pearson correlation</li>
+<li>Cosine of user vectors in rating space</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Explaining recommendations</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Explaining Collaborative Filtering Recommendations by Herlocker, Konstan, and Riedl (Proc. CSCW 2000)</li>
+</ul>
+
+<h1>Key lessons</h1>
+
+<ul>
+<li>Simplicity is key – users didn’t like “correlation,” statistical terms, or being overwhelmed with data</li>
+<li>Simple visualizations work well – histogram, table</li>
+<li>Supporting information valued – historical success, attribute-linked data, associations</li>
+</ul>
+
+<h1>One key mistake:</h1>
+
+<ul>
+<li>We didn’t actually measure explanation effectiveness, but rather persuasiveness</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>Item-item CF</h2>
+  </hgroup>
+  <article>
+    <h1>Pre-compute item similarities over all pairs of items</h1>
+
+<ul>
+<li>Usually use cosine similarity between item rating vectors</li>
+<li>Often normalize user ratings first (subtract user mean, subtract item mean)</li>
+</ul>
+
+<h1>Look for items similar to those the user likes (purchased, in their basket)</h1>
+
+<ul>
+<li>For each item to score:</li>
+<li>Find similar items the user has rated</li>
+<li>Compute weighted average of user&#39;s ratings</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Unary Data</h2>
+  </hgroup>
+  <article>
+    <h1>Computing Similarities</h1>
+
+<ul>
+<li>Cosine similarity still works</li>
+<li>Can also use conditional probability</li>
+</ul>
+
+<h1>Aggregating Scores</h1>
+
+<ul>
+<li>Weighted average works for non-binary</li>
+<li>For binary (0/1), just sum neighbor similarities</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Dimensionality Reduction</h2>
+  </hgroup>
+  <article>
+    <h1>Ratings matrix is an overfit representation of user tastes and item descriptions</h1>
+
+<ul>
+<li>Leads to problems of synonymy</li>
+<li>Also leads to computational complexity, potentially poorer results </li>
+<li>Ideal would be to have a more compact 
+representation of user tastes and item descriptions – but how ?</li>
+</ul>
+
+<h1>SVD</h1>
+
+<ul>
+<li>The reconstructed matrix R = [U.S.V’] is the closest rank-k matrix to the original matrix R. </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>SVD challenges</h2>
+  </hgroup>
+  <article>
+    <h1>Challenge #1:  missing values</h1>
+
+<ul>
+<li>‘Impute’ — assume they are a mean</li>
+<li>Normalize data first — assume they are 0</li>
+<li>ignore them</li>
+</ul>
+
+<h1>Challenge #2: computational complexity</h1>
+
+<ul>
+<li>FuncSVD</li>
+<li>SVD++</li>
+</ul>
+
+<h1>Challenge #3:  lack of transparency / explainability</h1>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h2>Hybrid Techniques</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Weighting – combine algorithm scores (Can be extended with feature-weighted coefficients)</li>
+<li>Switching – switch algorithms</li>
+<li>Mixed – mix output from diff. algorithms</li>
+<li>Use one algorithm as input to another</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>Evaluation</h2>
+  </hgroup>
+  <article>
+    <h1>Accuracy metrics</h1>
+
+<ul>
+<li>MAE, MSE, RMSE</li>
+</ul>
+
+<h1>Decision-support metrics</h1>
+
+<ul>
+<li>ROC AUC, precision/recall </li>
+</ul>
+
+<h1>Rank metrics</h1>
+
+<ul>
+<li>Spearman Rank Correlation, Discounted Cumulative Gain, Fraction of Concordant Pairs, Mean Reciprocal Rank </li>
+</ul>
+
+<h1>User and Usage-centered metrics</h1>
+
+<ul>
+<li>coverage, user retention, recommendation uptake, satisfaction </li>
+</ul>
+
+<h1>More metrics!</h1>
+
+<ul>
+<li>Coverage, Diversity, Serendipity</li>
+</ul>
+
+<h1>A Commercial Look</h1>
+
+<ul>
+<li>Lift, cross-sales, up-sales, conversions</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h2>Problems</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Threats</li>
+<li>&#39;Cold start&#39; problem</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-25" style="background:;">
+  <hgroup>
+    <h2>Tools</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>LensKit (Java)</li>
+<li>Apache Mahout (Java)</li>
+<li>MyMediaLight (C#/.NET)</li>
+<li>GraphLab (C#, Java)</li>
+<li>REST services (EasyRec, PredictionIO)</li>
+<li>crab (Python)</li>
+<li>mrec (Python)</li>
+<li>recommenderlab (R)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-26" style="background:;">
+  <hgroup>
+    <h2>Resources</h2>
+  </hgroup>
+  <article>
+    <h1>Online resources:</h1>
+
+<ul>
+<li><p>Coursera: Introduction to Recommender Systems <a href="https://www.coursera.org/course/recsys">https://www.coursera.org/course/recsys</a></p></li>
+<li><p><a href="http://recsys.cs.umn.edu/readings.html">http://recsys.cs.umn.edu/readings.html</a></p></li>
+<li><p>Recommender System Wiki <a href="http://www.recsyswiki.com/wiki/Main_Page">http://www.recsyswiki.com/wiki/Main_Page</a></p></li>
+<li><p><a href="http://habrahabr.ru/search/?q=Surfingbird">http://habrahabr.ru/search/?q=Surfingbird</a></p></li>
+</ul>
+
+<h1>Books:</h1>
+
+<ul>
+<li>Handbook of Recommender Systems (Ricci et al., Eds.) 2011, 2014?</li>
+<li><a href="http://recommenderbook.net/">http://recommenderbook.net/</a></li>
+</ul>
+
+<h1>Articles:</h1>
+
+<ul>
+<li>ACM Conference on Recommender Systems </li>
+<li>ACM Trans. on Information Systems</li>
+<li>User Modeling and User-Adapted Interaction</li>
+<li>FunkSVD <a href="http://sifter.org/%7Esimon/journal/20061211.html">http://sifter.org/~simon/journal/20061211.html</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://slidifylibraries.googlecode.com/git/inst/libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="http://slidifylibraries.googlecode.com/git/inst/libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+</html>
