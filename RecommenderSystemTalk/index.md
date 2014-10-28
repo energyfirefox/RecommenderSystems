@@ -1,17 +1,13 @@
-
 ---
-title: "RecSys"
-output:
-  ioslides_presentation:
-    highlight: tango
-  
+title       : Recommender Systems Talk
+author      : Anastasiia Kornilova
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
 ---
-
-## R Markdown
-
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
 
 ## Agenda
 
@@ -22,7 +18,7 @@ When you click the **Knit** button a document will be generated that includes bo
 - Existing tools
 - Books and Online courses
 
-
+---
 
 ## Main Features
 
@@ -34,6 +30,7 @@ When you click the **Knit** button a document will be generated that includes bo
 - Privacy and Trustworthiness
 - Interfaces
 
+---
 
 ## Domains of recommendations
 <h>Content to Commerce and Beyond
@@ -48,7 +45,7 @@ When you click the **Knit** button a document will be generated that includes bo
 - New items (e.g., movies, books, …)
 - Re-recommend old ones (e.g., groceries, music)
 
-
+---
 
 ## Purposes of Recommendation
 
@@ -56,13 +53,15 @@ When you click the **Knit** button a document will be generated that includes bo
 - Education of user/customer
 - Build a community of users/customers around products or content
 
-
+---
 
 ## Whose Opinion?
 
 - “Experts”
 - Ordinary “phoaks”
 - People like you
+
+---
 
 ## Personalization Level
 
@@ -71,6 +70,7 @@ When you click the **Knit** button a document will be generated that includes bo
 - __Ephemeral:__ matches current activity
 - __Persistent:__ matches long-term interests
 
+---
 
 ## Privacy and Trustworthiness
 
@@ -85,6 +85,7 @@ When you click the **Knit** button a document will be generated that includes bo
 - Vulnerability to external manipulation
 - Transparency of “recommenders”
 
+---
 
 ## Interfaces
 
@@ -101,6 +102,7 @@ When you click the **Knit** button a document will be generated that includes bo
 - filtering
 - Organic vs. explicit presentation (Agent/Discussion Interface)
 
+---
 
 ## Recommendation Algorithms
 1.Non-Personalized Summary Statistics
@@ -121,6 +123,7 @@ When you click the **Knit** button a document will be generated that includes bo
   + Critique / Interview Based Recommendations
   + Hybrid Techniques
 
+---
 
 ## Non-Personalized Summary Stats
 
@@ -130,6 +133,7 @@ When you click the **Knit** button a document will be generated that includes bo
 - Best-liked
 - People who X also Y
 
+---
 
 ## Content-Based Filtering
 
@@ -141,6 +145,7 @@ __Alternative:__ knowledge-based (Item attributes form model of item space)
 
 __Example:__ Personalized news feeds
 
+---
 
 ## Content-Based Recommenders
 
@@ -158,6 +163,7 @@ __Example:__ Personalized news feeds
 
 - May want to limit/collapse keyword space (e.g., stem and stop)
 
+---
 
 ## Content-Based Recommenders. Tools
 
@@ -165,6 +171,7 @@ __Example:__ Personalized news feeds
 - LensKit
 - Machine Learning tools (Mahout, Python (with SciPi + NumPy), Matlab/Ocatve, R .. )
 
+---
 
 ## Personalized Collaborative Filtering
 
@@ -179,6 +186,7 @@ __Example:__ Personalized news feeds
 - Item-item (Pre-compute similarity among items via ratings)
 - Dimensionality reduction (Compress and use a taste representation)
 
+---
 
 ## User-User CF
 
@@ -198,6 +206,7 @@ __Example:__ Personalized news feeds
   + Pearson correlation
   + Cosine of user vectors in rating space
 
+---
 
 ## Explaining recommendations
 
@@ -213,6 +222,8 @@ Explaining Collaborative Filtering Recommendations by Herlocker, Konstan, and Ri
 
 - We didn’t actually measure explanation effectiveness, but rather persuasiveness
 
+---
+
 ## Item-item CF
 
 1.Pre-compute item similarities over all pairs of items
@@ -225,6 +236,7 @@ Explaining Collaborative Filtering Recommendations by Herlocker, Konstan, and Ri
   + Find similar items the user has rated
   + Compute weighted average of user's ratings
 
+---
 
 ## Dimensionality Reduction
 
@@ -237,6 +249,7 @@ Ratings matrix is an overfit representation of user tastes and item descriptions
 <h> SVD - the reconstructed matrix R = [U.S.V’] is the closest rank-k matrix to the original matrix R.
 Help to discover latent factors.
 
+---
 
 ## SVD challenges
 
@@ -253,7 +266,7 @@ __Challenge #2:__ computational complexity
 
 __Challenge #3:__ lack of transparency / explainability
 
-
+---
 
 ## Hybrid Techniques
 
@@ -261,6 +274,8 @@ __Challenge #3:__ lack of transparency / explainability
 - Switching – switch algorithms
 - Mixed – mix output from diff. algorithms
 - Use one algorithm as input to another
+
+---
 
 ## Evaluation
 
@@ -288,12 +303,14 @@ __Challenge #3:__ lack of transparency / explainability
 
   + Lift, cross-sales, up-sales, conversions
 
+---
 
 ## Problems
 
 - Threats
 - 'Cold start' problem
 
+---
 
 ## Tools
 
@@ -306,13 +323,14 @@ __Challenge #3:__ lack of transparency / explainability
 - mrec (Python)
 - recommenderlab (R)
 
+---
 
 ## Resources
 
 *Online resources:
 
 + Coursera: Introduction to Recommender Systems https://www.coursera.org/course/recsys
-+ http://recsys.cs.umn.edu/readings.html
++ Coursera: Mining Massive Datasets https://www.coursera.org/course/mmds
 + Recommender System Wiki http://www.recsyswiki.com/wiki/Main_Page
 + http://habrahabr.ru/search/?q=Surfingbird
 
@@ -327,8 +345,6 @@ __Challenge #3:__ lack of transparency / explainability
 + ACM Trans. on Information Systems
 + User Modeling and User-Adapted Interaction
 + FunkSVD http://sifter.org/~simon/journal/20061211.html
-
-
 
 
 
