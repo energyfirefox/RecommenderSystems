@@ -20,18 +20,6 @@ knit        : slidify::knit2slides
 
 ---
 
-## Main Features
-
-- Domain
-- Purpose
-- Recommendation Context
-- Whose Opinions
-- Personalization Level
-- Privacy and Trustworthiness
-- Interfaces
-
----
-
 ## Domains of recommendations
 <h>Content to Commerce and Beyond
 
@@ -53,6 +41,7 @@ knit        : slidify::knit2slides
 - Education of user/customer
 - Build a community of users/customers around products or content
 
+![alt text](http://www.in-solve-ncy.co.uk/wp-content/uploads/2011/02/Purpose.jpg)
 ---
 
 ## Whose Opinion?
@@ -60,6 +49,8 @@ knit        : slidify::knit2slides
 - “Experts”
 - Ordinary “phoaks”
 - People like you
+
+![alt text](http://opinion-people.com/sites/opinion-place/files/about_mr1.png)
 
 ---
 
@@ -69,6 +60,8 @@ knit        : slidify::knit2slides
 - __Demographic:__ matches a target group
 - __Ephemeral:__ matches current activity
 - __Persistent:__ matches long-term interests
+
+![alt text] (http://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Darts_in_a_dartboard.jpg/283px-Darts_in_a_dartboard.jpg)
 
 ---
 
@@ -145,6 +138,8 @@ __Alternative:__ knowledge-based (Item attributes form model of item space)
 
 __Example:__ Personalized news feeds
 
+![alt text](http://blog.soton.ac.uk/comp6051-bazinga/files/2013/04/ContentBasedRS.png)
+
 ---
 
 ## Content-Based Recommenders
@@ -180,11 +175,7 @@ __Example:__ Personalized news feeds
 - Item model – set of ratings
 - Common core: sparse matrix of ratings
 
-<h>Techniques
-
-- User-user (Select neighborhood of similar-taste people and use their opinion)
-- Item-item (Pre-compute similarity among items via ratings)
-- Dimensionality reduction (Compress and use a taste representation)
+![alt text](http://blog.soton.ac.uk/comp6051-bazinga/files/2013/04/CollaborativeRS.png)
 
 ---
 
@@ -210,7 +201,7 @@ __Example:__ Personalized news feeds
 
 ## Explaining recommendations
 
-Explaining Collaborative Filtering Recommendations by Herlocker, Konstan, and Riedl (Proc. CSCW 2000)
+[Explaining Collaborative Filtering Recommendations by Herlocker, Konstan, and Riedl (Proc. CSCW 2000)](http://files.grouplens.org/papers/explain-CSCW.pdf)
 
 <h> Key lessons
 
@@ -246,8 +237,9 @@ Ratings matrix is an overfit representation of user tastes and item descriptions
 - Also leads to computational complexity, potentially poorer results
 - Ideal would be to have a more compact representation of user tastes and item descriptions – but how ?
 
-<h> SVD - the reconstructed matrix R = [U.S.V’] is the closest rank-k matrix to the original matrix R.
 Help to discover latent factors.
+
+![alt text](http://smd.princeton.edu/images/help/svd_matrices.gif)
 
 ---
 
@@ -275,17 +267,13 @@ __Challenge #3:__ lack of transparency / explainability
 - Mixed – mix output from diff. algorithms
 - Use one algorithm as input to another
 
+![alt text](http://blog.soton.ac.uk/comp6051-bazinga/files/2013/04/HybridRS.png)
 ---
 
 ## Evaluation
 
-*Accuracy metrics
-
-  + MAE, MSE, RMSE
-
-*Decision-support metrics
-
-  + ROC AUC, precision/recall
+*Accuracy and Decision-support metrics
+  + MAE, MSE, RMSE, ROC AUC, precision/recall
 
 *Rank metrics
 
@@ -310,6 +298,7 @@ __Challenge #3:__ lack of transparency / explainability
 - Threats
 - 'Cold start' problem
 
+![alt text](http://www.caveon.com/blog2/wp-content/uploads/2013/04/Threat.png)
 ---
 
 ## Tools
