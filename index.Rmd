@@ -194,8 +194,7 @@ __Example:__ Personalized news feeds
   + z-score
 
 4.Computing Similarities
-  + Pearson correlation
-  + Cosine of user vectors in rating space
+
 
 ---
 
@@ -268,6 +267,7 @@ __Challenge #3:__ lack of transparency / explainability
 - Use one algorithm as input to another
 
 ![alt text](http://blog.soton.ac.uk/comp6051-bazinga/files/2013/04/HybridRS.png)
+
 ---
 
 ## Evaluation
